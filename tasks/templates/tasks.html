@@ -1,0 +1,48 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+{% if error %}
+
+<h1>{{error}}</h1>
+
+{% else %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-3">
+            <h1 class="text-center display-3 py-3">Tasks</h1>
+            <ul class="list-group mt-3">
+                {% for task in tasks %}
+
+                <li class="list-group-item">
+                    <a href="{% url 'tasks_detail' task.id %}" style="text-decoration: none; color: inherit;">
+                        <div>
+                            <header class="d-flex align-items-center justify-content-between">
+                                {% if task.important %}
+                                <h2 class="fw-bold text-success">
+                                    {{task.title}}
+                                </h2>
+                                {% else %}
+                                <h2 class="fw-bold">
+                                    {{task.title}}
+                                </h2>
+                                {% endif %}
+                                <p><b>{{task.user.username}}</b></p>
+                            </header>
+
+                            <p>
+                                {{task.description}}
+                            </p>
+                            <p>{{task.datecomplete|date:'M j Y:i'}}</p>
+                        </div>
+                    </a>
+                </li>
+
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</main>
+
+{% endif %}
+{% endblock %}

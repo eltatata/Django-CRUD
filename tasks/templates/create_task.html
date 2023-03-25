@@ -1,0 +1,18 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <form class="card card-body" action="{% url 'create_tasks' %}" method="post">
+                <h1 class="text-center py-4">Create your task</h1>
+                {{ error }}
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}

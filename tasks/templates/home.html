@@ -1,0 +1,29 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
+<main class="container py-5">
+    <section class="card-body">
+        <h1 class="display-1 text-center">Django App</h1>
+
+        <p class="p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, harum corporis ipsum, neque
+            totam veniam
+            sequi
+            doloremque aliquam ad cupiditate repellendus ut, dolore omnis. Voluptas harum magnam est ipsum repudiandae?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam necessitatibus eaque dolorum excepturi
+            neque perspiciatis aut temporibus debitis, sapiente corrupti tenetur, omnis et cupiditate facilis, placeat
+            sint ad. Corporis, earum!
+        </p>
+
+        <div class="text-center">
+            <a class="btn btn-primary" href="{% url 'register' %}">
+                Register
+            </a>
+            <a class="btn btn-info" href="{% url 'login' %}">
+                Login
+            </a>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

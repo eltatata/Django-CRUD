@@ -1,0 +1,39 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-5">
+            <!-- <form action="{% url 'register' %}" method="post" class="card-body text-center">
+                <h1>Register</h1>
+                {{ error }}
+                {% csrf_token %}
+            </form> -->
+
+            <form class="card card-body" method="POST" action="{% url 'register' %}">
+                <h1>Register</h1>
+                {{ error }}
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required
+                        placeholder="Username">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password1" name="password1" required
+                        placeholder="Password">
+                </div>
+                <div class="mb-3">
+                    <label for="confirm_password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="password2" name="password2" required
+                        placeholder="Confirm Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
